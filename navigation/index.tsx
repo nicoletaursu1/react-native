@@ -8,6 +8,8 @@ import SplashScreen from '../screens/SplashScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
 import SignScreen from '../screens/SignScreen';
 import RegisterScreen from '../screens/RegisterScreen';
+import HomeScreen from '../screens/HomeScreen';
+import NotificationScreen from '../screens/NotificationScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -25,11 +27,13 @@ const Stack = createStackNavigator();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Sign">
+    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Notification">
       <Stack.Screen name="Welcome" component={WelcomeScreen} options={{title: 'Welcome'}} />
       <Stack.Screen name="Splash" component={SplashScreen} options={{title: 'Telemedicine'}} />
       <Stack.Screen name="Sign" component={SignScreen} options={{title: 'Sign In'}} />
       <Stack.Screen name="Register" component={RegisterScreen} options={{...NavOptions, title: 'Register', headerShown: true}} />
+      <Stack.Screen name="Home" component={HomeScreen} options={{...NavOptions, title: 'Home', headerShown: true}} />
+      <Stack.Screen name="Notification" component={NotificationScreen} options={{...NavOptions, title: 'Notification', headerShown: true}} />
       <Stack.Screen name="Root" component={BottomTabNavigator} />
     </Stack.Navigator>
   );
